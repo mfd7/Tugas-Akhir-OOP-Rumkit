@@ -36,6 +36,6 @@ public class Dokter extends Person{
     public void setSpesialis(String spesialis) {
         this.spesialis = spesialis;
     }
-    
-    
+   
+ 
 }

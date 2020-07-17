@@ -37,12 +37,4 @@ public class Pasien extends Person{
     public void setDokter_nama(String dokter_nama) {
         this.dokter_nama = dokter_nama;
     }
-    
-    
-
-
-
-
-    
-    
 }

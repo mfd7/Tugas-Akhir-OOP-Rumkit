@@ -53,6 +53,7 @@ public class Dashboard_page extends javax.swing.JFrame {
         btn_dokter.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btn_reg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         btnSimpan.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btnExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
         setColor(btn_pasien); 
         ind_pasien.setOpaque(true);
@@ -91,7 +92,7 @@ public class Dashboard_page extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         ind_reg = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -106,7 +107,7 @@ public class Dashboard_page extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         igdTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        text_caripasien1 = new javax.swing.JTextField();
+        text_cariigd = new javax.swing.JTextField();
         lbl_totalpasien1 = new javax.swing.JLabel();
         kamarPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -313,8 +314,13 @@ public class Dashboard_page extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(71, 120, 197));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
+        btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExitMouseClicked(evt);
+            }
+        });
+        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -421,13 +427,13 @@ public class Dashboard_page extends javax.swing.JFrame {
         jLabel6.setText("Cari Pasien :");
         igdPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        text_caripasien1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        text_caripasien1.addKeyListener(new java.awt.event.KeyAdapter() {
+        text_cariigd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        text_cariigd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                text_caripasien1KeyReleased(evt);
+                text_cariigdKeyReleased(evt);
             }
         });
-        igdPanel.add(text_caripasien1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 240, -1));
+        igdPanel.add(text_cariigd, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 240, -1));
 
         lbl_totalpasien1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         igdPanel.add(lbl_totalpasien1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
@@ -645,7 +651,8 @@ public class Dashboard_page extends javax.swing.JFrame {
     private void btn_pasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pasienMouseClicked
         setColor(btn_pasien); 
         ind_pasien.setOpaque(true);
-        resetColor(new JPanel[]{btn_igd,btn_kamar,btn_dokter,btn_reg}, new JPanel[]{ind_igd,ind_kamar,ind_dokter,ind_reg});
+        resetColor(new JPanel[]{btn_igd,btn_kamar,btn_dokter,btn_reg},
+                new JPanel[]{ind_igd,ind_kamar,ind_dokter,ind_reg});
         
         cardLayout.show(card_panel, "pasienPanel");
     }//GEN-LAST:event_btn_pasienMouseClicked
@@ -653,7 +660,8 @@ public class Dashboard_page extends javax.swing.JFrame {
     private void btn_igdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_igdMouseClicked
         setColor(btn_igd); 
         ind_igd.setOpaque(true);
-        resetColor(new JPanel[]{btn_pasien,btn_kamar,btn_dokter,btn_reg}, new JPanel[]{ind_pasien,ind_kamar,ind_dokter,ind_reg});
+        resetColor(new JPanel[]{btn_pasien,btn_kamar,btn_dokter,btn_reg},
+                new JPanel[]{ind_pasien,ind_kamar,ind_dokter,ind_reg});
         
         cardLayout.show(card_panel, "igdPanel");
         igdQuery();
@@ -662,7 +670,8 @@ public class Dashboard_page extends javax.swing.JFrame {
     private void btn_kamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kamarMouseClicked
         setColor(btn_kamar); 
         ind_kamar.setOpaque(true);
-        resetColor(new JPanel[]{btn_pasien,btn_igd,btn_dokter,btn_reg}, new JPanel[]{ind_pasien,ind_igd,ind_dokter,ind_reg});
+        resetColor(new JPanel[]{btn_pasien,btn_igd,btn_dokter,btn_reg},
+                new JPanel[]{ind_pasien,ind_igd,ind_dokter,ind_reg});
         
         cardLayout.show(card_panel, "kamarPanel");
         kamarQuery();
@@ -672,9 +681,9 @@ public class Dashboard_page extends javax.swing.JFrame {
         tableSearch();
     }//GEN-LAST:event_text_caripasienKeyReleased
 
-    private void text_caripasien1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_caripasien1KeyReleased
+    private void text_cariigdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_cariigdKeyReleased
         igdSearch();
-    }//GEN-LAST:event_text_caripasien1KeyReleased
+    }//GEN-LAST:event_text_cariigdKeyReleased
 
     private void cbUrutItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbUrutItemStateChanged
         kamarSort();
@@ -687,7 +696,8 @@ public class Dashboard_page extends javax.swing.JFrame {
     private void btn_dokterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dokterMouseClicked
         setColor(btn_dokter); 
         ind_dokter.setOpaque(true);
-        resetColor(new JPanel[]{btn_pasien,btn_igd,btn_kamar,btn_reg}, new JPanel[]{ind_pasien,ind_igd,ind_kamar,ind_reg});
+        resetColor(new JPanel[]{btn_pasien,btn_igd,btn_kamar,btn_reg},
+                new JPanel[]{ind_pasien,ind_igd,ind_kamar,ind_reg});
         
         cardLayout.show(card_panel, "dokterPanel");
         dokterQuery();
@@ -696,7 +706,8 @@ public class Dashboard_page extends javax.swing.JFrame {
     private void btn_regMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regMouseClicked
         setColor(btn_reg); 
         ind_reg.setOpaque(true);
-        resetColor(new JPanel[]{btn_pasien,btn_igd,btn_dokter,btn_kamar}, new JPanel[]{ind_pasien,ind_igd,ind_dokter,ind_kamar});
+        resetColor(new JPanel[]{btn_pasien,btn_igd,btn_dokter,btn_kamar},
+                new JPanel[]{ind_pasien,ind_igd,ind_dokter,ind_kamar});
         
         cardLayout.show(card_panel, "regPanel");
     }//GEN-LAST:event_btn_regMouseClicked
@@ -802,6 +813,10 @@ int idDokter = 0;
     private void btnSimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSimpanMouseClicked
         tambahPasien();
     }//GEN-LAST:event_btnSimpanMouseClicked
+
+    private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_btnExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -945,7 +960,7 @@ int idDokter = 0;
         List<Pasien> pasien = new ArrayList<Pasien>();
         try{
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("Select * from pasien where pasien_nama like '%"+text_caripasien1.getText().toString()+"%' and pasien_tipe = 'igd'");
+            ResultSet rs = st.executeQuery("Select * from pasien where pasien_nama like '%"+text_cariigd.getText().toString()+"%' and pasien_tipe = 'igd'");
             while(rs.next()){
                 Pasien ps = new Pasien();
                 ps.setPasien_ktp(rs.getString("pasien_ktp"));
@@ -1207,6 +1222,7 @@ int idDokter = 0;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnExit;
     private javax.swing.JPanel btnSimpan;
     private javax.swing.JPanel btn_dokter;
     private javax.swing.JPanel btn_igd;
@@ -1239,7 +1255,6 @@ int idDokter = 0;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -1269,8 +1284,8 @@ int idDokter = 0;
     private javax.swing.JPanel pasienPanel;
     private javax.swing.JTable pasienTable;
     private javax.swing.JPanel regPanel;
+    private javax.swing.JTextField text_cariigd;
     private javax.swing.JTextField text_caripasien;
-    private javax.swing.JTextField text_caripasien1;
     private javax.swing.JTextField txtAlamat;
     private javax.swing.JTextField txtKtp;
     private javax.swing.JTextField txtNama;

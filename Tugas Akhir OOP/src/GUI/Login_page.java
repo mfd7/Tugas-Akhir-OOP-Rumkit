@@ -43,7 +43,7 @@ public class Login_page extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelRight = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         text_uname = new javax.swing.JTextField();
         text_pass = new javax.swing.JTextField();
@@ -60,29 +60,29 @@ public class Login_page extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(71, 120, 197));
-        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        panelRight.setBackground(new java.awt.Color(71, 120, 197));
+        panelRight.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel1MouseDragged(evt);
+                panelRightMouseDragged(evt);
             }
         });
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelRight.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel1MousePressed(evt);
+                panelRightMousePressed(evt);
             }
         });
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelRight.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Sign In");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+        panelRight.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         text_uname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel1.add(text_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 140, -1));
+        panelRight.add(text_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 140, -1));
 
         text_pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPanel1.add(text_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 140, -1));
+        panelRight.add(text_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 140, -1));
 
         jPanel4.setBackground(new java.awt.Color(71, 94, 227));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,7 +90,7 @@ public class Login_page extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lock.png"))); // NOI18N
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 20, 25));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 182, 20, 28));
+        panelRight.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 182, 20, 28));
 
         btn_login.setBackground(new java.awt.Color(255, 255, 255));
         btn_login.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -106,7 +106,7 @@ public class Login_page extends javax.swing.JFrame {
         jLabel3.setText("LOGIN");
         btn_login.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 30));
 
-        jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 226, 140, 30));
+        panelRight.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 226, 140, 30));
 
         jPanel3.setBackground(new java.awt.Color(71, 94, 227));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,7 +114,7 @@ public class Login_page extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 0, 20, 25));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 141, 20, 28));
+        panelRight.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 141, 20, 28));
 
         btn_exit.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
         btn_exit.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,9 +124,9 @@ public class Login_page extends javax.swing.JFrame {
                 btn_exitMouseClicked(evt);
             }
         });
-        jPanel1.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, 20));
+        panelRight.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 210, 300));
+        getContentPane().add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 210, 300));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Pictures\\bg.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -135,19 +135,19 @@ public class Login_page extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     int xx, xy;
-    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+    private void panelRightMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRightMousePressed
         xx = evt.getX();
         xy = evt.getY();
-    }//GEN-LAST:event_jPanel1MousePressed
+    }//GEN-LAST:event_panelRightMousePressed
 
-    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+    private void panelRightMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRightMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x-xx,y-xy);
-    }//GEN-LAST:event_jPanel1MouseDragged
+    }//GEN-LAST:event_panelRightMouseDragged
 
     private void btn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMouseClicked
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btn_exitMouseClicked
 
     private void btn_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseClicked
@@ -216,9 +216,9 @@ public class Login_page extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel panelRight;
     private javax.swing.JTextField text_pass;
     private javax.swing.JTextField text_uname;
     // End of variables declaration//GEN-END:variables
