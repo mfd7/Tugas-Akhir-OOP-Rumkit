@@ -46,7 +46,6 @@ public class Login_page extends javax.swing.JFrame {
         panelRight = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         text_uname = new javax.swing.JTextField();
-        text_pass = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btn_login = new javax.swing.JPanel();
@@ -54,6 +53,7 @@ public class Login_page extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btn_exit = new javax.swing.JLabel();
+        text_pass = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,9 +80,6 @@ public class Login_page extends javax.swing.JFrame {
 
         text_uname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         panelRight.add(text_uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 140, -1));
-
-        text_pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        panelRight.add(text_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 140, -1));
 
         jPanel4.setBackground(new java.awt.Color(71, 94, 227));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -126,6 +123,9 @@ public class Login_page extends javax.swing.JFrame {
         });
         panelRight.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, 20));
 
+        text_pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        panelRight.add(text_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 140, -1));
+
         getContentPane().add(panelRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 210, 300));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Pictures\\bg.jpg")); // NOI18N
@@ -164,7 +164,7 @@ public class Login_page extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
         }
-        if(text_uname.getText().equals(uname) && text_pass.getText().equals(pass)){
+        if(text_uname.getText().equals(uname) && String.valueOf(text_pass.getPassword()).equals(pass)){
             Dashboard_page dash = new Dashboard_page();
             dash.setVisible(true);
             this.dispose();
@@ -219,7 +219,7 @@ public class Login_page extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel panelRight;
-    private javax.swing.JTextField text_pass;
+    private javax.swing.JPasswordField text_pass;
     private javax.swing.JTextField text_uname;
     // End of variables declaration//GEN-END:variables
 }

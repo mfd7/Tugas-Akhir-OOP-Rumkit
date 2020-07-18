@@ -655,6 +655,7 @@ public class Dashboard_page extends javax.swing.JFrame {
                 new JPanel[]{ind_igd,ind_kamar,ind_dokter,ind_reg});
         
         cardLayout.show(card_panel, "pasienPanel");
+        tableQuery();
     }//GEN-LAST:event_btn_pasienMouseClicked
 
     private void btn_igdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_igdMouseClicked
@@ -1193,10 +1194,11 @@ int idDokter = 0;
         nomor = cbNomor.getSelectedItem().toString();
         dokter_id = idDokter;
         pasien_tipe = cbTipe.getSelectedItem().toString();
-        String query = null;
+        String query = null, query2 = null;
         if(cbTipe.getSelectedItem() == "Inap"){
             query = "insert into pasien (pasien_ktp,pasien_nama,pasien_umur,pasien_alamat,kamar_nomor,dokter_id,pasien_tipe) "+
                     "value('"+ktp+"','"+nama+"',"+umur+",'"+alamat+"',"+nomor+","+dokter_id+",'"+pasien_tipe+"')";
+            query2 = "Update kamar set kamar_ketersediaan = 'T' where kamar_nomor="+nomor;
         }else if(cbTipe.getSelectedItem() == "Jalan"){
             query = "insert into pasien (pasien_ktp,pasien_nama,pasien_umur,pasien_alamat,kamar_nomor,dokter_id,pasien_tipe) "+
                     "value('"+ktp+"','"+nama+"',"+umur+",'"+alamat+"',NULL,"+dokter_id+",'"+pasien_tipe+"')";
@@ -1207,6 +1209,10 @@ int idDokter = 0;
         try {
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.executeUpdate();
+            if(cbTipe.getSelectedItem() == "Inap"){
+                PreparedStatement stmt1 = conn.prepareStatement(query2);
+                stmt1.executeUpdate();
+            }
             JOptionPane.showMessageDialog(this, "Data pasien berhasil ditambahkan!");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
